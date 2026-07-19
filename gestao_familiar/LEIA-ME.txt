@@ -1,0 +1,35 @@
+PRIMEDESK GESTÃO FAMILIAR — LANDING PAGE
+
+LOCALIZAÇÃO
+
+Esta landing page faz parte do pacote central PrimeDesk Site Sistemas e deve
+permanecer na pasta gestao_familiar/. Ao publicar o pacote completo, ela fica
+disponível no endereço /gestao_familiar/.
+
+COMO TESTAR
+
+1. Abra o index.html da raiz do pacote central.
+2. Selecione Gestão Familiar.
+
+VÍDEO DE APRESENTAÇÃO
+
+- O arquivo video.mp4 está incluído na raiz desta pasta.
+- O vídeo permanece em proporção vertical 9:16 no celular e no computador.
+- A reprodução usa playsinline e carregamento otimizado para acesso móvel.
+- Para substituir a apresentação, mantenha o nome video.mp4 e use
+  preferencialmente um vídeo vertical 9:16.
+
+WHATSAPP
+
+- O formulário encaminha solicitações ao número +55 89 99471-6436.
+- O número fica definido em WHATSAPP_NUMBER no arquivo script.js.
+
+ARQUIVOS
+
+- index.html: estrutura e textos da página.
+- styles.css: visual e responsividade.
+- script.js: menu, animações, vídeo e envio para o WhatsApp.
+- assets/video-poster.jpg: poster vertical do vídeo.
+- video.mp4: apresentação incorporada.
+
+A página não depende de bibliotecas externas.
