@@ -42,26 +42,88 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 document.getElementById('current-year').textContent = String(new Date().getFullYear());
 
+const videoShell = document.getElementById('video-shell');
 const video = document.getElementById('product-video');
 const fallback = document.getElementById('video-fallback');
 let videoAvailable = false;
 
+function isMobileDevice() {
+  return window.matchMedia('(max-width: 900px)').matches &&
+    (navigator.maxTouchPoints > 0 || 'ontouchstart' in window);
+}
+
+async function lockLandscapeWhenSupported() {
+  if (!screen.orientation || typeof screen.orientation.lock !== 'function') return;
+  try {
+    await screen.orientation.lock('landscape');
+  } catch (_) {
+    // Alguns navegadores, especialmente no iPhone, não permitem o bloqueio.
+  }
+}
+
+async function openMobileFullscreen() {
+  const target = typeof video.requestFullscreen === 'function' ? video : videoShell;
+  if (target && typeof target.requestFullscreen === 'function') {
+    await target.requestFullscreen();
+    await lockLandscapeWhenSupported();
+  }
+}
+
+async function startPresentation() {
+  if (!videoAvailable) {
+    showToast('Não foi possível carregar a apresentação. Verifique se o arquivo video.mp4 foi publicado junto com a página.');
+    return;
+  }
+
+  fallback.classList.add('hidden');
+
+  try {
+    if (isMobileDevice() && typeof video.webkitEnterFullscreen === 'function') {
+      // No Safari móvel, iniciar pelo gesto do usuário antes de abrir o player nativo.
+      await video.play();
+      video.webkitEnterFullscreen();
+    } else {
+      if (isMobileDevice()) {
+        await openMobileFullscreen();
+      }
+      await video.play();
+    }
+  } catch (_) {
+    try {
+      await video.play();
+      if (isMobileDevice()) {
+        showToast('Para melhor visualização, gire o celular para a posição horizontal.');
+      }
+    } catch (_) {
+      fallback.classList.remove('hidden');
+      showToast('Não foi possível iniciar o vídeo. Toque novamente no botão de reprodução.');
+    }
+  }
+}
+
 video.addEventListener('loadedmetadata', () => {
   videoAvailable = true;
-  fallback.classList.add('hidden');
 });
 video.addEventListener('error', () => {
   videoAvailable = false;
   fallback.classList.remove('hidden');
 });
-fallback.addEventListener('click', () => {
-  if (videoAvailable) {
-    fallback.classList.add('hidden');
-    video.play().catch(() => {});
-  } else {
-    showToast('Não foi possível carregar a apresentação. Verifique se o arquivo video.mp4 foi publicado junto com a página.');
-  }
+video.addEventListener('play', () => fallback.classList.add('hidden'));
+video.addEventListener('ended', () => {
+  fallback.classList.remove('hidden');
+  video.currentTime = 0;
 });
+fallback.addEventListener('click', startPresentation);
+
+function unlockOrientation() {
+  if (screen.orientation && typeof screen.orientation.unlock === 'function') {
+    try { screen.orientation.unlock(); } catch (_) {}
+  }
+}
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) unlockOrientation();
+});
+video.addEventListener('webkitendfullscreen', unlockOrientation);
 
 function showToast(message) {
   toast.textContent = message;
@@ -85,14 +147,6 @@ leadForm.addEventListener('submit', (event) => {
     `E-mail: ${data.get('email') || 'Não informado'}`
   ].join('\n');
 
-  if (WHATSAPP_NUMBER) {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  } else if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => {
-      showToast('Mensagem copiada. Configure seu WhatsApp no arquivo script.js para abrir o contato automaticamente.');
-    }).catch(() => showToast('Configure o número de WhatsApp no arquivo script.js.'));
-  } else {
-    showToast('Configure o número de WhatsApp no arquivo script.js.');
-  }
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
 });

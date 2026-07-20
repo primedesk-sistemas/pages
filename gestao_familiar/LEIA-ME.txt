@@ -14,10 +14,14 @@ COMO TESTAR
 VÍDEO DE APRESENTAÇÃO
 
 - O arquivo video.mp4 está incluído na raiz desta pasta.
-- O vídeo permanece em proporção vertical 9:16 no celular e no computador.
-- A reprodução usa playsinline e carregamento otimizado para acesso móvel.
-- Para substituir a apresentação, mantenha o nome video.mp4 e use
-  preferencialmente um vídeo vertical 9:16.
+- O vídeo usa proporção horizontal 16:9 e resolução web de 1280 x 720.
+- Em celulares compatíveis, tocar na apresentação solicita tela cheia e tenta
+  bloquear a orientação em paisagem pelo Screen Orientation API.
+- iPhone e alguns navegadores não permitem que uma página force a rotação; nesses
+  casos, o vídeo abre no modo de tela cheia permitido pelo aparelho e o usuário
+  pode girar o dispositivo manualmente.
+- Para substituir a apresentação, mantenha o nome video.mp4 e use um vídeo
+  horizontal 16:9.
 
 WHATSAPP
 
@@ -28,8 +32,8 @@ ARQUIVOS
 
 - index.html: estrutura e textos da página.
 - styles.css: visual e responsividade.
-- script.js: menu, animações, vídeo e envio para o WhatsApp.
-- assets/video-poster.jpg: poster vertical do vídeo.
+- script.js: menu, animações, vídeo, tela cheia e envio para o WhatsApp.
+- assets/video-poster.jpg: poster horizontal do vídeo.
 - video.mp4: apresentação incorporada.
 
 A página não depende de bibliotecas externas.
