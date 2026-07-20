@@ -13,6 +13,7 @@ COMO TESTAR
 
 VÍDEO DE APRESENTAÇÃO
 
+- A apresentação aparece logo após o bloco principal da página, antes das demais seções de recursos, para ficar visível mais cedo ao visitante.
 - O arquivo video.mp4 está incluído na raiz desta pasta.
 - O vídeo usa proporção horizontal 16:9 e resolução web de 1280 x 720.
 - Em celulares compatíveis, tocar na apresentação solicita tela cheia e tenta
