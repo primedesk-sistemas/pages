@@ -2,7 +2,7 @@ PRIMEDESK SITE DE APRESENTAÇÃO DOS SISTEMAS
 
 ESTRUTURA ATUAL
 
-- index.html: página principal para escolher qual sistema visualizar.
+- index.html: seletor compacto exibido imediatamente ao acessar o site.
 - gestao_familiar/: landing page completa da Gestão Familiar.
 - styles.css e script.js: arquivos da página principal.
 
@@ -19,5 +19,6 @@ Publique todo o conteúdo desta pasta na raiz do site. O servidor deve servir
 index.html automaticamente ao acessar uma pasta. Assim, por exemplo,
 /gestao_familiar/ abrirá gestao_familiar/index.html.
 
-Os módulos marcados como "Em breve" aparecem na página principal, mas não são
-links enquanto suas respectivas landing pages ainda não existirem.
+A página principal foi reduzida a uma janela central de seleção, sem banner,
+rodapé extenso ou necessidade de navegar para encontrar os módulos. Os módulos
+marcados como "Em breve" não são links enquanto suas páginas não existirem.

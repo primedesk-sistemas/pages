@@ -2,119 +2,68 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Conheça os sistemas PrimeDesk para gestão, controle e atendimento.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Escolha o sistema PrimeDesk que deseja conhecer.">
   <meta name="theme-color" content="#081d33">
   <title>PrimeDesk | Escolha um sistema</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#sistemas">Ir para os sistemas</a>
+  <main class="selection-page">
+    <div class="background-orb orb-one" aria-hidden="true"></div>
+    <div class="background-orb orb-two" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="./" aria-label="PrimeDesk - página inicial">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M20 4 34 12v16L20 36 6 28V12L20 4Z"/><path class="brand-cut" d="M14 13h9.5c5.5 0 8.5 2.8 8.5 7.2 0 4.5-3 7.3-8.5 7.3H20V33h-6V13Zm6 5v4.5h3.2c1.8 0 2.8-.8 2.8-2.3 0-1.4-1-2.2-2.8-2.2H20Z"/></svg>
-        </span>
-        <span class="brand-copy"><strong>PrimeDesk</strong><small>Sistemas</small></span>
-      </a>
-      <span class="domain">primedesk.pro</span>
-    </div>
-  </header>
+    <section class="system-picker" aria-labelledby="picker-title">
+      <header class="picker-header">
+        <a class="brand" href="./" aria-label="PrimeDesk Sistemas">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><path d="M20 4 34 12v16L20 36 6 28V12L20 4Z"/><path class="brand-cut" d="M14 13h9.5c5.5 0 8.5 2.8 8.5 7.2 0 4.5-3 7.3-8.5 7.3H20V33h-6V13Zm6 5v4.5h3.2c1.8 0 2.8-.8 2.8-2.3 0-1.4-1-2.2-2.8-2.2H20Z"/></svg>
+          </span>
+          <span class="brand-copy"><strong>PrimeDesk</strong><small>Sistemas</small></span>
+        </a>
+        <span class="domain">primedesk.pro</span>
+      </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-      <div class="container hero-content">
-        <span class="eyebrow"><i></i> Soluções para diferentes rotinas</span>
-        <h1>Qual sistema você quer conhecer?</h1>
-        <p>Escolha um módulo PrimeDesk para visualizar seus recursos, benefícios e formas de uso.</p>
+      <div class="picker-intro">
+        <span class="eyebrow">Conheça nossas soluções</span>
+        <h1 id="picker-title">Qual sistema você quer conhecer?</h1>
       </div>
-    </section>
 
-    <section class="systems-section" id="sistemas" aria-labelledby="systems-title">
-      <div class="container">
-        <div class="section-heading">
-          <span>Plataforma PrimeDesk</span>
-          <h2 id="systems-title">Sistemas disponíveis</h2>
+      <div class="system-options" aria-label="Sistemas PrimeDesk">
+        <a class="system-option available" href="gestao_familiar/">
+          <span class="option-icon icon-family" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm13 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span class="option-copy"><strong>Gestão Familiar</strong><small>CRAS e CREAS</small></span>
+          <span class="option-action">Conhecer <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+        </a>
+
+        <div class="system-option pending" aria-label="Controle de Ponto, em breve">
+          <span class="option-icon icon-clock" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <span class="option-copy"><strong>Controle de Ponto</strong><small>Jornada de trabalho</small></span>
+          <span class="option-status">Em breve</span>
         </div>
 
-        <div class="systems-grid">
-          <a class="system-card system-card-active" href="gestao_familiar/" aria-label="Conhecer PrimeDesk Gestão Familiar">
-            <div class="card-topline">
-              <span class="status status-available">Disponível</span>
-            </div>
-            <span class="system-icon icon-family" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm13 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
-            <div class="card-copy">
-              <small>Assistência social</small>
-              <h3>Gestão Familiar</h3>
-              <p>Atendimentos, visitas domiciliares, famílias e relatórios para CRAS e CREAS.</p>
-            </div>
-            <span class="card-action">Conhecer o sistema <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-          </a>
+        <div class="system-option pending" aria-label="PDV, em breve">
+          <span class="option-icon icon-pdv" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v11H4zM7 19h10M9 15v4m6-4v4M8 8h3m2 0h3m-8 3h8"/></svg>
+          </span>
+          <span class="option-copy"><strong>PDV</strong><small>Vendas e operação</small></span>
+          <span class="option-status">Em breve</span>
+        </div>
 
-          <article class="system-card system-card-pending" aria-label="PrimeDesk Controle de Ponto, em breve">
-            <div class="card-topline">
-              <span class="status status-soon">Em breve</span>
-            </div>
-            <span class="system-icon icon-clock" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            </span>
-            <div class="card-copy">
-              <small>Jornada de trabalho</small>
-              <h3>Controle de Ponto</h3>
-              <p>Registro, acompanhamento e gestão da jornada dos colaboradores.</p>
-            </div>
-            <span class="card-action card-action-muted">Página em preparação</span>
-          </article>
-
-          <article class="system-card system-card-pending" aria-label="PrimeDesk PDV, em breve">
-            <div class="card-topline">
-              <span class="status status-soon">Em breve</span>
-            </div>
-            <span class="system-icon icon-pdv" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16v11H4zM7 19h10M9 15v4m6-4v4M8 8h3m2 0h3m-8 3h8"/></svg>
-            </span>
-            <div class="card-copy">
-              <small>Vendas e operação</small>
-              <h3>PDV</h3>
-              <p>Vendas, pedidos, estoque e acompanhamento da operação comercial.</p>
-            </div>
-            <span class="card-action card-action-muted">Página em preparação</span>
-          </article>
-
-          <article class="system-card system-card-pending" aria-label="PrimeDesk Controle de Frequência, em breve">
-            <div class="card-topline">
-              <span class="status status-soon">Em breve</span>
-            </div>
-            <span class="system-icon icon-frequency" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg>
-            </span>
-            <div class="card-copy">
-              <small>Presença e acompanhamento</small>
-              <h3>Controle de Frequência</h3>
-              <p>Frequências, competências, jornadas, documentos e auditoria.</p>
-            </div>
-            <span class="card-action card-action-muted">Página em preparação</span>
-          </article>
+        <div class="system-option pending" aria-label="Controle de Frequência, em breve">
+          <span class="option-icon icon-frequency" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg>
+          </span>
+          <span class="option-copy"><strong>Controle de Frequência</strong><small>Presença e acompanhamento</small></span>
+          <span class="option-status">Em breve</span>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>PrimeDesk Sistemas</strong>
-        <p>Uma plataforma, múltiplas soluções.</p>
-      </div>
-      <span>© <span id="current-year"></span> PrimeDesk</span>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
